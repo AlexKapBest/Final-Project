@@ -1,0 +1,60 @@
+.footer {
+  background-color: #f5f5f5;
+  padding: 24px 0 16px;
+}
+
+.content {
+  display: flex;
+  gap: 64px;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.link {
+  display: block;
+  margin-bottom: 6px;
+  color: #444;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+}
+
+.socialLabel {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.socialLink {
+  text-decoration: none; 
+  color: inherit;        
+  display: flex;         
+  align-items: center;   
+  gap: 10px;            
+  margin-bottom: 10px;   
+}
+
+.socialLink:hover {
+  opacity: 0.5;
+}
