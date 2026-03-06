@@ -21,6 +21,7 @@ app.get('/api/universities', async (req, res) => {
 
     const universities = results
       .filter(r => r.status === 'fulfilled')
+      .map(r => r.value)
 
     results
       .filter(r => r.status === 'rejected')

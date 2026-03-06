@@ -10,7 +10,7 @@ type Props = {
 const UniversityCard = ({ university, searchQuery }: Props) => {
   const { addFavorite, removeFavorite, isFavorite } = useFavoritesStore()
 
-  const filtered = university.data.filter((item) =>
+  const filtered = (university.data ?? []).filter((item) =>
     item.specialty.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
