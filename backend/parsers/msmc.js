@@ -1,6 +1,8 @@
 const axios = require('axios')
+const crypto = require('crypto')
 
 const URL = 'https://msmc.by/абитуриентам/проходные-баллы'
+const YEAR = '2025'
 
 function cleanText(html) {
   return html
@@ -70,7 +72,8 @@ function parseTable(html) {
     if (seen.has(specialty)) continue
 
     seen.add(specialty)
-    results.push({ specialty, score })
+    const id = crypto.createHash('md5').update(`МГМК|${specialty}|${YEAR}`).digest('hex').slice(0, 12)
+    results.push({ id, year: YEAR, specialty, score })
   }
 
   return results

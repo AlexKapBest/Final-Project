@@ -19,9 +19,9 @@ const CompareByUniversity = ({ universities }: { universities: University[] }) =
 
   return (
     <Box>
-      <FormControl fullWidth sx={{ mb: 3 }}>
+      <FormControl fullWidth sx={{ mb: 3, maxWidth: { sm: 500 } }}>
         <InputLabel>Выберите вузы</InputLabel>
-        <Select multiple value={selected} onChange={handleChange} label="Выберите вузы (до 3)">
+        <Select multiple value={selected} onChange={handleChange} label="Выберите вузы">
           {universities.map((u) => (
             <MenuItem key={u.university} value={u.university}>{u.university}</MenuItem>
           ))}
@@ -33,8 +33,8 @@ const CompareByUniversity = ({ universities }: { universities: University[] }) =
       )}
 
       {selectedUnis.length > 0 && (
-        <TableContainer component={Paper}>
-          <Table size="small">
+        <TableContainer component={Paper} sx={{ overflowX: 'auto' }}>
+          <Table size="small" sx={{ minWidth: 400 }}>
             <TableHead>
               <TableRow>
                 <TableCell><strong>Специальность</strong></TableCell>

@@ -12,7 +12,7 @@ const HomePage = () => {
   }, [fetchUniversities])
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
       <Typography variant="h4" gutterBottom>Проходные баллы вузов Минска</Typography>
       <Typography color="text.secondary" sx={{ mb: 3 }}>
         Актуальные данные с официальных сайтов трёх учебных заведений.

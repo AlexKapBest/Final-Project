@@ -43,6 +43,7 @@ app.post('/api/suggest', (req, res) => {
     suggestions = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
   }
 
+  suggestions.push({ name, url, email })
   fs.writeFileSync(filePath, JSON.stringify(suggestions, null, 2))
   res.json({ success: true })
 })

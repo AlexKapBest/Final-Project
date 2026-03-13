@@ -1,6 +1,8 @@
 const axios = require('axios')
+const crypto = require('crypto')
 
 const URL = 'https://guo-mpk.by/prohodnye-bally-po-speczialnosti/'
+const YEAR = '2025'
 
 function cleanText(html) {
   return html
@@ -62,7 +64,8 @@ function parseTable(html) {
       }
     }
 
-    results.push({ specialty: first, score })
+    const id = crypto.createHash('md5').update(`МПК|${first}|${YEAR}`).digest('hex').slice(0, 12)
+    results.push({ id, year: YEAR, specialty: first, score })
   }
 
   return results

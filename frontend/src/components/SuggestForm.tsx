@@ -28,7 +28,7 @@ const SuggestForm = () => {
   })
 
   return (
-    <Box component="form" onSubmit={formik.handleSubmit} sx={{ maxWidth: 480 }}>
+    <Box component="form" onSubmit={formik.handleSubmit} sx={{ maxWidth: 480, width: '100%' }}>
       <Typography variant="h6" gutterBottom>Предложить вуз</Typography>
 
       {success && <Alert severity="success" sx={{ mb: 2 }}>Спасибо! Предложение отправлено.</Alert>}

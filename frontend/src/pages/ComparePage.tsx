@@ -9,9 +9,9 @@ const ComparePage = () => {
   const [tab, setTab] = useState(0)
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
       <Typography variant="h4" gutterBottom>Сравнение</Typography>
-      <Tabs value={tab} onChange={(_e, v: number) => setTab(v)} sx={{ mb: 3 }}>
+      <Tabs value={tab} onChange={(_click, v: number) => setTab(v)} sx={{ mb: 3 }}>
         <Tab label="По вузам" />
         <Tab label="По годам" />
       </Tabs>

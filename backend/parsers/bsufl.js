@@ -1,6 +1,8 @@
 const axios = require('axios')
+const crypto = require('crypto')
 
 const URL = 'https://bsufl.by/entrant/admission/prokhodnye-bally/text-passing-marks-2025.php'
+const YEAR = '2025'
 
 function cleanText(html) {
   return html
@@ -62,7 +64,8 @@ function parseTable(html) {
       score = '—'
     }
 
-    results.push({ specialty, score })
+    const id = crypto.createHash('md5').update(`БГУИЯ|${specialty}|${YEAR}`).digest('hex').slice(0, 12)
+    results.push({ id, year: YEAR, specialty, score })
   }
 
   return results

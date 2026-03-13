@@ -1,4 +1,6 @@
 export type Specialty = {
+  id: string
+  year: string
   specialty: string
   score: string
 }

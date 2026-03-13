@@ -19,3 +19,21 @@
   display: flex;
   gap: 4px;
 }
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    height: 60px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
